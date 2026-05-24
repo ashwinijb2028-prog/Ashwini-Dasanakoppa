@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashwini Dasanakoppa | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a1628;--navy2:#0f2040;--accent:#00d4aa;--accent2:#0099ff;
+  --text:#e8edf4;--muted:#8a9ab5;--card:#111e33;--border:#1e3052;
+  --green:#00d4aa;--blue:#0099ff;--purple:#7c5cfc;
+}
+body{background:var(--navy);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:15px;font-weight:600;color:var(--accent);font-family:'DM Mono',monospace}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:13px;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 10% 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,170,0.06) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,153,255,0.05) 0%,transparent 70%);pointer-events:none}
+.hero-content{max-width:700px;z-index:1}
+.hero-tag{font-family:'DM Mono',monospace;font-size:13px;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:8px}
+.hero-tag::before{content:'';display:inline-block;width:24px;height:1px;background:var(--accent)}
+.hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:600;line-height:1.15;margin-bottom:1rem;letter-spacing:-0.02em}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:1.1rem;color:var(--muted);margin-bottom:2rem;max-width:520px;line-height:1.7}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2.5rem}
+.badge{font-size:12px;font-family:'DM Mono',monospace;padding:5px 12px;border-radius:4px;border:1px solid var(--border);color:var(--muted)}
+.badge.green{border-color:rgba(0,212,170,0.3);color:var(--green);background:rgba(0,212,170,0.05)}
+.badge.blue{border-color:rgba(0,153,255,0.3);color:var(--blue);background:rgba(0,153,255,0.05)}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{padding:11px 28px;border-radius:6px;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.btn-primary{background:var(--accent);color:var(--navy);border:none}
+.btn-primary:hover{background:#00c49a;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.hero-stats{display:flex;gap:3rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.stat-num{font-size:2rem;font-weight:600;color:var(--text);font-family:'DM Mono',monospace}
+.stat-label{font-size:12px;color:var(--muted)}
+
+/* SECTIONS */
+section{padding:80px 10%}
+.section-tag{font-family:'DM Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:.5rem}
+.section-title{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:600;margin-bottom:3rem;letter-spacing:-0.02em}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:border-color .2s}
+.skill-card:hover{border-color:var(--accent)}
+.skill-card-icon{width:40px;height:40px;border-radius:8px;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;font-size:20px}
+.icon-green{background:rgba(0,212,170,0.1);color:var(--green)}
+.icon-blue{background:rgba(0,153,255,0.1);color:var(--blue)}
+.icon-purple{background:rgba(124,92,252,0.1);color:var(--purple)}
+.skill-card h3{font-size:14px;font-weight:600;margin-bottom:.75rem;color:var(--text)}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.skill-tag{font-size:11px;font-family:'DM Mono',monospace;padding:3px 8px;border-radius:3px;background:rgba(255,255,255,0.04);color:var(--muted);border:1px solid var(--border)}
+
+/* EXPERIENCE */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--accent),var(--blue),transparent)}
+.exp-item{position:relative;margin-bottom:3rem}
+.exp-item::before{content:'';position:absolute;left:-2.4rem;top:8px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--navy)}
+.exp-header{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:.5rem;margin-bottom:.5rem}
+.exp-title{font-size:1.1rem;font-weight:600;color:var(--text)}
+.exp-period{font-size:12px;font-family:'DM Mono',monospace;color:var(--accent);padding:3px 10px;border:1px solid rgba(0,212,170,0.3);border-radius:4px}
+.exp-company{font-size:14px;color:var(--muted);margin-bottom:1rem}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.exp-bullets li{font-size:14px;color:var(--muted);padding-left:1rem;position:relative;line-height:1.6}
+.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:12px}
+.exp-promo{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--green);background:rgba(0,212,170,0.08);border:1px solid rgba(0,212,170,0.2);border-radius:4px;padding:4px 10px;margin-top:.5rem}
+
+/* CERTS */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;display:flex;align-items:flex-start;gap:12px;transition:border-color .2s}
+.cert-card:hover{border-color:rgba(0,212,170,0.4)}
+.cert-icon{width:32px;height:32px;min-width:32px;border-radius:6px;background:rgba(0,212,170,0.1);display:flex;align-items:center;justify-content:center;color:var(--green);font-size:14px;font-weight:700;font-family:'DM Mono',monospace}
+.cert-name{font-size:13px;font-weight:500;color:var(--text);line-height:1.4}
+.cert-type{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.75rem;transition:border-color .2s;position:relative;overflow:hidden}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--accent),var(--blue))}
+.project-card:hover{border-color:var(--accent)}
+.project-num{font-size:11px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:.75rem}
+.project-card h3{font-size:1rem;font-weight:600;margin-bottom:.75rem;color:var(--text)}
+.project-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+.project-tech{display:flex;flex-wrap:wrap;gap:6px}
+.tech-tag{font-size:11px;font-family:'DM Mono',monospace;padding:3px 8px;background:rgba(0,153,255,0.08);color:var(--blue);border-radius:3px;border:1px solid rgba(0,153,255,0.2)}
+
+/* CONTACT */
+.contact-wrapper{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.contact-left h2{font-size:1.8rem;font-weight:600;margin-bottom:1rem}
+.contact-left p{color:var(--muted);font-size:15px;line-height:1.7}
+.contact-links{display:flex;flex-direction:column;gap:1rem}
+.contact-link{display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;transition:all .2s}
+.contact-link:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,212,170,0.04)}
+.contact-link-icon{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+
+/* FOOTER */
+footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-size:12px;color:var(--muted);font-family:'DM Mono',monospace}
+
+/* OPEN TO WORK */
+.otw-banner{background:rgba(0,212,170,0.06);border:1px solid rgba(0,212,170,0.2);border-radius:8px;padding:14px 20px;display:inline-flex;align-items:center;gap:10px;margin-bottom:2rem}
+.otw-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+.otw-text{font-size:13px;color:var(--accent)}
+
+@media(max-width:768px){
+  .hero{padding:100px 5% 60px}
+  section{padding:60px 5%}
+  .contact-wrapper{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
+  nav{padding:0 1rem}
+  .nav-links{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">ashwini.dev</div>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#certs">Certs</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Available for US roles</div>
+
+    <div class="otw-banner">
+      <div class="otw-dot"></div>
+      <span class="otw-text">Open to Work — ServiceNow Developer · Architect · Data Engineer</span>
+    </div>
+
+    <h1>Hi, I'm <span>Ashwini</span><br>Dasanakoppa</h1>
+    <p class="hero-sub">ServiceNow Developer & Data Engineer with 5+ years delivering enterprise-scale solutions for Fortune 500 clients at Accenture and Fidelity Investments USA.</p>
+
+    <div class="hero-badges">
+      <span class="badge green">ServiceNow Developer</span>
+      <span class="badge green">Data Engineer</span>
+      <span class="badge blue">AWS</span>
+      <span class="badge blue">Python</span>
+      <span class="badge blue">SQL</span>
+      <span class="badge">ITSM · ITOM · CMDB</span>
+      <span class="badge">ETL Pipelines</span>
+      <span class="badge">M.S. Computer Science</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="mailto:ashwinijb2028@gmail.com" class="btn btn-primary">Get In Touch</a>
+      <a href="https://linkedin.com/in/Ashwini-Dasanakoppa" target="_blank" class="btn btn-outline">View LinkedIn</a>
+    </div>
+
+    <div class="hero-stats">
+      <div><div class="stat-num">5+</div><div class="stat-label">Years Experience</div></div>
+      <div><div class="stat-num">6</div><div class="stat-label">ServiceNow Certs</div></div>
+      <div><div class="stat-num">F500</div><div class="stat-label">Clients Served</div></div>
+      <div><div class="stat-num">30+</div><div class="stat-label">Workflows Automated</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-tag">// what I work with</div>
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-card-icon icon-green">⚙</div>
+      <h3>ServiceNow Platform</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">ITSM</span><span class="skill-tag">ITOM</span><span class="skill-tag">ITAM</span>
+        <span class="skill-tag">CMDB</span><span class="skill-tag">Discovery</span><span class="skill-tag">CPG</span>
+        <span class="skill-tag">Flow Designer</span><span class="skill-tag">Integration Hub</span>
+        <span class="skill-tag">Performance Analytics</span><span class="skill-tag">Virtual Agent</span>
+        <span class="skill-tag">Service Portal</span><span class="skill-tag">Service Catalog</span>
+        <span class="skill-tag">Now Assist (AI)</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-icon icon-blue">{ }</div>
+      <h3>Development & Scripting</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">JavaScript</span><span class="skill-tag">Glide API</span>
+        <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span>
+        <span class="skill-tag">Client Scripts</span><span class="skill-tag">Business Rules</span>
+        <span class="skill-tag">Script Includes</span><span class="skill-tag">REST API</span>
+        <span class="skill-tag">SOAP API</span><span class="skill-tag">Flask</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-icon icon-blue">⬡</div>
+      <h3>Data Engineering</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">ETL / ELT Pipelines</span><span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MySQL</span><span class="skill-tag">NoSQL</span>
+        <span class="skill-tag">Data Pipeline Automation</span><span class="skill-tag">Pandas</span>
+        <span class="skill-tag">NumPy</span><span class="skill-tag">Data Visualization</span>
+        <span class="skill-tag">Statistical Analysis</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-icon icon-purple">☁</div>
+      <h3>Cloud & DevOps</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS S3</span><span class="skill-tag">AWS RDS</span>
+        <span class="skill-tag">AWS Lambda</span><span class="skill-tag">AWS CloudWatch</span>
+        <span class="skill-tag">GCP</span><span class="skill-tag">CI/CD Pipelines</span>
+        <span class="skill-tag">GitHub</span><span class="skill-tag">Postman</span>
+        <span class="skill-tag">Agile / Scrum</span><span class="skill-tag">VS Code</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="experience" style="background:rgba(255,255,255,0.01);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-tag">// where I've worked</div>
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline">
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">Data Engineer</div>
+        <div class="exp-period">May 2024 – May 2025</div>
+      </div>
+      <div class="exp-company">Fidelity Investments · USA · Full-time</div>
+      <ul class="exp-bullets">
+        <li>Built and optimized automated ETL/ELT pipelines processing 1M+ rows of financial data with 99.9% integrity</li>
+        <li>Managed large-scale PostgreSQL, MySQL, and NoSQL databases for high-volume financial workloads</li>
+        <li>Leveraged AWS (S3, RDS, Lambda, CloudWatch) for scalable cloud data storage and processing</li>
+        <li>Developed REST API integrations connecting enterprise data systems across platforms</li>
+        <li>Designed interactive dashboards and visualizations for senior stakeholder reporting</li>
+        <li>Applied CI/CD pipelines and Git version control to automate deployments and ensure reliability</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">ServiceNow Developer & Analyst</div>
+        <div class="exp-period">Jul 2021 – Sep 2024</div>
+      </div>
+      <div class="exp-company">Accenture · Karnataka, India · Hybrid</div>
+      <ul class="exp-bullets">
+        <li>Designed CMDB architecture managing 10,000+ global IT assets — improving resource allocation by 15%</li>
+        <li>Automated 30+ manual workflows using Flow Designer & Integration Hub — 25% faster incident resolution</li>
+        <li>Deployed 15+ automated data pipelines, reducing manual data entry by 20% across ITSM modules</li>
+        <li>Built REST/SOAP integrations connecting ServiceNow to external enterprise platforms for Fortune 500 clients</li>
+        <li>Designed ITSM, ITOM, Discovery, and Cloud Provisioning & Governance frameworks at enterprise scale</li>
+        <li>Collaborated directly with US, UK, and global client stakeholders across time zones</li>
+      </ul>
+      <div class="exp-promo">⬆ Promoted to Analyst within first year</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="certs">
+  <div class="section-tag">// credentials</div>
+  <h2 class="section-title">ServiceNow Certifications</h2>
+  <div class="certs-grid">
+    <div class="cert-card"><div class="cert-icon">CSA</div><div><div class="cert-name">Certified System Administrator</div><div class="cert-type">Core Certification</div></div></div>
+    <div class="cert-card"><div class="cert-icon">CAD</div><div><div class="cert-name">Certified Application Developer</div><div class="cert-type">Core Certification</div></div></div>
+    <div class="cert-card"><div class="cert-icon">CIS</div><div><div class="cert-name">CIS — ITSM</div><div class="cert-type">Implementation Specialist</div></div></div>
+    <div class="cert-card"><div class="cert-icon">CIS</div><div><div class="cert-name">CIS — Discovery</div><div class="cert-type">Implementation Specialist</div></div></div>
+    <div class="cert-card"><div class="cert-icon">CIS</div><div><div class="cert-name">CIS — Cloud Provisioning & Governance</div><div class="cert-type">Implementation Specialist</div></div></div>
+    <div class="cert-card"><div class="cert-icon">DB</div><div><div class="cert-name">CMDB Specialist</div><div class="cert-type">Specialist Certification</div></div></div>
+    <div class="cert-card"><div class="cert-icon">μ</div><div><div class="cert-name">Flow Designer · Integration Hub</div><div class="cert-type">Micro-Certifications</div></div></div>
+    <div class="cert-card"><div class="cert-icon">μ</div><div><div class="cert-name">Performance Analytics · Virtual Agent</div><div class="cert-type">Micro-Certifications</div></div></div>
+  </div>
+</section>
+
+<section id="projects" style="background:rgba(255,255,255,0.01);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-tag">// what I've built</div>
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-num">01 / Research</div>
+      <h3>Space Weather Web Application</h3>
+      <p>Full-stack web app with real-time NASA API integration, interactive news feeds, and an AI-powered space bot for educational engagement.</p>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span><span class="tech-tag">Flask</span>
+        <span class="tech-tag">REST API</span><span class="tech-tag">JavaScript</span><span class="tech-tag">HTML/CSS</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">02 / Research</div>
+      <h3>Blockchain in Capital Markets</h3>
+      <p>Technical analysis comparing Ethereum vs Hyperledger resiliency with focus on data residency compliance and asset tokenization in financial markets.</p>
+      <div class="project-tech">
+        <span class="tech-tag">Blockchain</span><span class="tech-tag">Ethereum</span>
+        <span class="tech-tag">Hyperledger</span><span class="tech-tag">Data Analysis</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">03 / Security</div>
+      <h3>Website Fingerprinting & Tor Analysis</h3>
+      <p>Research evaluation of traffic metadata analysis and security vulnerabilities in Tor anonymity networks, exploring attack vectors and mitigations.</p>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span><span class="tech-tag">Network Security</span>
+        <span class="tech-tag">Data Analysis</span><span class="tech-tag">Research</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-wrapper">
+    <div class="contact-left">
+      <div class="section-tag">// let's talk</div>
+      <h2>Open to new opportunities</h2>
+      <p>I'm actively looking for ServiceNow Developer, Architect, and Data Engineer roles in the USA. If you have an interesting opportunity or just want to connect — reach out!</p>
+      <br>
+      <div class="hero-badges">
+        <span class="badge green">ServiceNow Developer</span>
+        <span class="badge green">ServiceNow Architect</span>
+        <span class="badge blue">Data Engineer</span>
+      </div>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:ashwinijb2028@gmail.com" class="contact-link">
+        <div class="contact-link-icon" style="background:rgba(234,67,53,0.1);color:#ea4335;font-size:18px">✉</div>
+        <div><div style="font-weight:500">Email</div><div style="font-size:12px;color:var(--muted)">ashwinijb2028@gmail.com</div></div>
+      </a>
+      <a href="https://linkedin.com/in/Ashwini-Dasanakoppa" target="_blank" class="contact-link">
+        <div class="contact-link-icon" style="background:rgba(0,119,181,0.1);color:#0077b5;font-size:18px">in</div>
+        <div><div style="font-weight:500">LinkedIn</div><div style="font-size:12px;color:var(--muted)">linkedin.com/in/Ashwini-Dasanakoppa</div></div>
+      </a>
+      <a href="https://github.com/ashwini-dasanakoppa" target="_blank" class="contact-link">
+        <div class="contact-link-icon" style="background:rgba(255,255,255,0.06);color:var(--text);font-size:18px">⌥</div>
+        <div><div style="font-weight:500">GitHub</div><div style="font-size:12px;color:var(--muted)">github.com/ashwini-dasanakoppa</div></div>
+      </a>
+      <div class="contact-link" style="border-color:rgba(0,212,170,0.3)">
+        <div class="otw-dot" style="min-width:8px"></div>
+        <div style="font-size:13px;color:var(--accent)">Open to Work · Haverford, PA · USA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Ashwini Dasanakoppa · Built with HTML/CSS · Haverford, PA, USA</p>
+</footer>
+
+</body>
+</html>
