@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashwini Dasanakoppa | Portfolio</title>
+<title>Ashwini Dasanakoppa | ServiceNow Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -27,7 +27,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 
 /* HERO */
 .hero{padding:120px 8% 80px;display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:center;min-height:100vh;background:var(--white)}
-.hero-left{}
 .otw{display:inline-flex;align-items:center;gap:8px;background:var(--teal-light);border:1px solid var(--teal-mid);border-radius:20px;padding:6px 14px;margin-bottom:1.5rem}
 .otw-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
@@ -45,7 +44,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .stat-num{font-size:1.8rem;font-weight:700;color:var(--text);font-family:'DM Mono',monospace;line-height:1}
 .stat-label{font-size:11px;color:var(--muted);font-weight:500;margin-top:4px}
 
-/* HERO RIGHT - visual card */
+/* HERO RIGHT */
 .hero-right{display:flex;flex-direction:column;gap:1rem}
 .profile-card{background:linear-gradient(135deg,#0d9488 0%,#0b7a70 100%);border-radius:16px;padding:2rem;color:white;position:relative;overflow:hidden}
 .profile-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:rgba(255,255,255,0.08);border-radius:50%}
@@ -68,7 +67,7 @@ section{padding:80px 8%}
 .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;font-family:'DM Mono',monospace}
 .section-title{font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:3rem;color:var(--text)}
 
-/* ABOUT / VISUAL SECTION */
+/* ABOUT */
 .about-section{background:var(--white);border-top:1px solid var(--border)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .about-img-placeholder{background:var(--bg2);border-radius:16px;height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;border:1px solid var(--border)}
@@ -99,11 +98,9 @@ section{padding:80px 8%}
 .timeline{max-width:760px}
 .exp-item{display:grid;grid-template-columns:180px 1fr;gap:2rem;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
 .exp-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.exp-left{}
 .exp-period{font-size:12px;font-family:'DM Mono',monospace;color:var(--teal);font-weight:500;margin-bottom:.25rem}
 .exp-company{font-size:13px;font-weight:600;color:var(--text)}
 .exp-loc{font-size:11px;color:var(--muted)}
-.exp-right{}
 .exp-title{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:.5rem}
 .exp-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:1rem}
 .exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
@@ -121,14 +118,34 @@ section{padding:80px 8%}
 .cert-name{font-size:13px;font-weight:600;color:var(--text);line-height:1.3}
 .cert-type{font-size:11px;color:var(--muted);margin-top:2px}
 
+/* TRACK LEVELS */
+.tracks-section{background:var(--white);border-top:1px solid var(--border)}
+.tracks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.track-card{border-radius:14px;padding:1.75rem;border:1px solid var(--border);position:relative;overflow:hidden;transition:all .2s}
+.track-card:hover{transform:translateY(-2px)}
+.track-assoc{background:linear-gradient(135deg,#e6faf8,#f0fdfb);border-color:var(--teal-mid)}
+.track-dev{background:linear-gradient(135deg,#e8f1fb,#f0f6ff);border-color:#b5d4f4}
+.track-exp{background:linear-gradient(135deg,#fef3c7,#fffbeb);border-color:#fcd34d}
+.track-level{font-size:10px;font-family:'DM Mono',monospace;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.track-assoc .track-level{color:var(--teal)}
+.track-dev .track-level{color:var(--blue)}
+.track-exp .track-level{color:#b45309}
+.track-title{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.track-items{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.track-items li{font-size:12px;color:var(--muted);padding-left:1.1rem;position:relative}
+.track-items li::before{content:'✓';position:absolute;left:0;font-size:10px;top:2px}
+.track-assoc .track-items li::before{color:var(--teal)}
+.track-dev .track-items li::before{color:var(--blue)}
+.track-exp .track-items li::before{color:#b45309}
+
 /* PROJECTS */
-.projects-section{background:var(--white);border-top:1px solid var(--border)}
+.projects-section{background:var(--bg);border-top:1px solid var(--border)}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-.project-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .2s}
+.project-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .2s}
 .project-card:hover{border-color:var(--teal);transform:translateY(-2px)}
 .project-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative}
-.thumb-space{background:linear-gradient(135deg,#e6faf8,#b2f0ea)}
-.thumb-block{background:linear-gradient(135deg,#e8f1fb,#b5d4f4)}
+.thumb-itsm{background:linear-gradient(135deg,#e6faf8,#b2f0ea)}
+.thumb-cmdb{background:linear-gradient(135deg,#e8f1fb,#b5d4f4)}
 .thumb-sec{background:linear-gradient(135deg,#fef3c7,#fde68a)}
 .project-body{padding:1.25rem}
 .project-num{font-size:10px;font-family:'DM Mono',monospace;color:var(--light);margin-bottom:.5rem}
@@ -157,6 +174,7 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
   .hero{grid-template-columns:1fr;padding:100px 5% 60px}
   .hero-right{display:none}
   .about-grid,.contact-inner{grid-template-columns:1fr}
+  .tracks-grid{grid-template-columns:1fr}
   .exp-item{grid-template-columns:1fr}
   section{padding:60px 5%}
   nav{padding:0 5%}
@@ -172,7 +190,7 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#certs">Certs</a>
-    <a href="#projects">Projects</a>
+    <a href="#tracks">Tracks</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -181,8 +199,8 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
 <div class="hero">
   <div class="hero-left">
     <div class="otw"><div class="otw-dot"></div><span>Open to Work · USA</span></div>
-    <h1>ServiceNow Developer<br>&amp; <em>Data Engineer</em></h1>
-    <p class="hero-sub">5+ years delivering enterprise-scale solutions for Fortune 500 clients at Accenture and Fidelity Investments USA. Specialized in ITSM, CMDB, ETL pipelines, Python, SQL, and AWS.</p>
+    <h1>ServiceNow<br><em>Developer & Expert</em></h1>
+    <p class="hero-sub">5+ years delivering enterprise-scale ServiceNow solutions for Fortune 500 clients at Accenture India and Fidelity Investments USA. Specialized in ITSM, CMDB, ITOM, Flow Designer, and platform architecture across Associate, Developer, and Expert tracks.</p>
     <div class="hero-cta">
       <a href="mailto:ashwinijb2028@gmail.com" class="btn btn-primary">Get In Touch</a>
       <a href="https://linkedin.com/in/Ashwini-Dasanakoppa" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
@@ -198,14 +216,14 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
     <div class="profile-card">
       <div class="avatar">AD</div>
       <div class="profile-name">Ashwini Dasanakoppa</div>
-      <div class="profile-title">ServiceNow Developer &amp; Data Engineer</div>
+      <div class="profile-title">ServiceNow Developer · CSA · CAD · CIS</div>
       <div class="profile-tags">
-        <span class="ptag">ITSM</span><span class="ptag">CMDB</span><span class="ptag">Python</span>
-        <span class="ptag">AWS</span><span class="ptag">ETL</span><span class="ptag">SQL</span>
+        <span class="ptag">ITSM</span><span class="ptag">CMDB</span><span class="ptag">ITOM</span>
+        <span class="ptag">Flow Designer</span><span class="ptag">Integration Hub</span><span class="ptag">CPG</span>
       </div>
     </div>
     <div class="info-cards">
-      <div class="info-card"><div class="info-card-icon">🏢</div><div class="info-card-num">Fidelity</div><div class="info-card-label">Current Company</div></div>
+      <div class="info-card"><div class="info-card-icon">🏢</div><div class="info-card-num">Fidelity</div><div class="info-card-label">Latest Role</div></div>
       <div class="info-card"><div class="info-card-icon">📍</div><div class="info-card-num">PA, USA</div><div class="info-card-label">Location</div></div>
       <div class="info-card"><div class="info-card-icon">🎓</div><div class="info-card-num">M.S. CS</div><div class="info-card-label">Montclair State</div></div>
       <div class="info-card"><div class="info-card-icon">✅</div><div class="info-card-num">6 Certs</div><div class="info-card-label">ServiceNow</div></div>
@@ -219,21 +237,21 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
     <div class="about-img-placeholder">
       <div class="about-icon-row">
         <div class="about-icon" style="background:#e6faf8;font-size:28px">⚙️</div>
-        <div class="about-icon" style="background:#e8f1fb;font-size:28px">📊</div>
-        <div class="about-icon" style="background:#fef3c7;font-size:28px">☁️</div>
+        <div class="about-icon" style="background:#e8f1fb;font-size:28px">🔗</div>
+        <div class="about-icon" style="background:#fef3c7;font-size:28px">🛡️</div>
       </div>
-      <div style="font-size:13px;color:var(--muted);font-family:'DM Mono',monospace;text-align:center;line-height:1.6">ServiceNow · Data Engineering · Cloud<br>Building enterprise solutions since 2021</div>
+      <div style="font-size:13px;color:var(--muted);font-family:'DM Mono',monospace;text-align:center;line-height:1.6">ServiceNow Platform Expert<br>ITSM · CMDB · ITOM · Discovery · CPG</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:0 1.5rem">
-        <span style="font-size:11px;background:var(--teal-light);color:var(--teal);padding:4px 10px;border-radius:4px;font-weight:600">Accenture · 3 yrs</span>
+        <span style="font-size:11px;background:var(--teal-light);color:var(--teal);padding:4px 10px;border-radius:4px;font-weight:600">Accenture · 3+ yrs</span>
         <span style="font-size:11px;background:var(--blue-light);color:var(--blue);padding:4px 10px;border-radius:4px;font-weight:600">Fidelity · 1 yr</span>
         <span style="font-size:11px;background:var(--bg2);color:var(--muted);padding:4px 10px;border-radius:4px;font-weight:600">India → USA 🇺🇸</span>
       </div>
     </div>
     <div class="about-text">
       <div class="section-eyebrow">About me</div>
-      <h2>From India to the USA — building enterprise tech that scales</h2>
-      <p>I came to the United States to pursue my Master's in Computer Science and earned the opportunity to work at Fidelity Investments as a Data Engineer. Combined with 3+ years at Accenture as a ServiceNow Developer, I bring a rare hybrid skill set across platform engineering and data infrastructure.</p>
-      <p>I've delivered solutions for Fortune 500 clients across the US, UK, and global markets — all while working across time zones and geographies. I'm passionate about automation, clean data pipelines, and enterprise systems that actually work.</p>
+      <h2>From India to the USA — building ServiceNow platforms that scale</h2>
+      <p>I came to the United States to pursue my Master's in Computer Science after 3+ years as a ServiceNow Developer and Analyst at Accenture, where I built enterprise ITSM, CMDB, and ITOM solutions for Fortune 500 clients across the US and UK.</p>
+      <p>I hold 6 ServiceNow certifications spanning Administrator, Developer, and Implementation Specialist tracks — and I've hands-on experience across the full platform lifecycle, from architecture and scripting to integrations and stakeholder delivery.</p>
       <div class="edu-card">
         <div class="edu-label">🎓 Education</div>
         <div class="edu-name">M.S. Computer Science — Montclair State University, NJ</div>
@@ -250,13 +268,13 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
   <div class="skills-grid">
     <div class="skill-card">
       <div class="skill-icon sk-teal">⚙️</div>
-      <h3>ServiceNow Platform</h3>
+      <h3>ITSM & Platform Modules</h3>
       <div class="skill-tags">
-        <span class="skill-tag">ITSM</span><span class="skill-tag">ITOM</span><span class="skill-tag">ITAM</span>
-        <span class="skill-tag">CMDB</span><span class="skill-tag">Discovery</span><span class="skill-tag">CPG</span>
-        <span class="skill-tag">Flow Designer</span><span class="skill-tag">Integration Hub</span>
-        <span class="skill-tag">Performance Analytics</span><span class="skill-tag">Virtual Agent</span>
-        <span class="skill-tag">Service Portal</span><span class="skill-tag">Now Assist AI</span>
+        <span class="skill-tag">Incident Management</span><span class="skill-tag">Problem Management</span>
+        <span class="skill-tag">Change Management</span><span class="skill-tag">Request Management</span>
+        <span class="skill-tag">Service Catalog</span><span class="skill-tag">CMDB</span>
+        <span class="skill-tag">Asset Management</span><span class="skill-tag">Knowledge Management</span>
+        <span class="skill-tag">SLA / OLA</span><span class="skill-tag">Service Portal</span>
       </div>
     </div>
     <div class="skill-card">
@@ -264,32 +282,33 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
       <h3>Development & Scripting</h3>
       <div class="skill-tags">
         <span class="skill-tag">JavaScript</span><span class="skill-tag">Glide API</span>
-        <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span>
         <span class="skill-tag">Client Scripts</span><span class="skill-tag">Business Rules</span>
-        <span class="skill-tag">Script Includes</span><span class="skill-tag">REST API</span>
-        <span class="skill-tag">SOAP API</span><span class="skill-tag">Flask</span>
+        <span class="skill-tag">Script Includes</span><span class="skill-tag">UI Policies</span>
+        <span class="skill-tag">ACLs</span><span class="skill-tag">Scheduled Jobs</span>
+        <span class="skill-tag">Transform Maps</span><span class="skill-tag">Data Import Sets</span>
+        <span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-icon sk-teal">📊</div>
-      <h3>Data Engineering</h3>
+      <div class="skill-icon sk-teal">🔗</div>
+      <h3>Automation & Integration</h3>
       <div class="skill-tags">
-        <span class="skill-tag">ETL / ELT Pipelines</span><span class="skill-tag">PostgreSQL</span>
-        <span class="skill-tag">MySQL</span><span class="skill-tag">NoSQL</span>
-        <span class="skill-tag">Pipeline Automation</span><span class="skill-tag">Pandas</span>
-        <span class="skill-tag">NumPy</span><span class="skill-tag">Data Visualization</span>
-        <span class="skill-tag">Statistical Analysis</span><span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">Flow Designer</span><span class="skill-tag">Integration Hub</span>
+        <span class="skill-tag">Workflow Editor</span><span class="skill-tag">REST API</span>
+        <span class="skill-tag">SOAP API</span><span class="skill-tag">MID Server</span>
+        <span class="skill-tag">Orchestration</span><span class="skill-tag">Event Management</span>
+        <span class="skill-tag">Notification Rules</span>
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-icon sk-blue">☁️</div>
-      <h3>Cloud & DevOps</h3>
+      <div class="skill-icon sk-blue">🛡️</div>
+      <h3>ITOM, Discovery & Cloud</h3>
       <div class="skill-tags">
-        <span class="skill-tag">AWS S3</span><span class="skill-tag">AWS RDS</span>
-        <span class="skill-tag">AWS Lambda</span><span class="skill-tag">CloudWatch</span>
-        <span class="skill-tag">GCP</span><span class="skill-tag">CI/CD Pipelines</span>
-        <span class="skill-tag">GitHub</span><span class="skill-tag">Postman</span>
-        <span class="skill-tag">Agile / Scrum</span><span class="skill-tag">VS Code</span>
+        <span class="skill-tag">Discovery</span><span class="skill-tag">Service Mapping</span>
+        <span class="skill-tag">ITOM Visibility</span><span class="skill-tag">Cloud Provisioning</span>
+        <span class="skill-tag">CPG (Cloud Governance)</span><span class="skill-tag">CMDB CI Relationships</span>
+        <span class="skill-tag">Performance Analytics</span><span class="skill-tag">Now Assist AI</span>
+        <span class="skill-tag">Virtual Agent</span>
       </div>
     </div>
   </div>
@@ -303,19 +322,19 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
 
     <div class="exp-item">
       <div class="exp-left">
-        <div class="exp-period">May 2024 – May 2025</div>
+        <div class="exp-period">May 2025 – Present</div>
         <div class="exp-company">Fidelity Investments</div>
-        <div class="exp-loc">USA · Full-time</div>
+        <div class="exp-loc">USA · Full Time</div>
       </div>
       <div class="exp-right">
-        <div class="exp-title">Data Engineer</div>
+        <div class="exp-title">ServiceNow Administrator & Developer</div>
         <ul class="exp-bullets">
-          <li>Built and optimized automated ETL/ELT pipelines processing 1M+ rows of financial data with 99.9% integrity</li>
-          <li>Managed large-scale PostgreSQL, MySQL, and NoSQL databases for high-volume financial workloads</li>
-          <li>Leveraged AWS (S3, RDS, Lambda, CloudWatch) for scalable cloud data storage and processing</li>
-          <li>Developed REST API integrations connecting enterprise data systems across platforms</li>
-          <li>Designed interactive dashboards and visualizations for senior stakeholder reporting</li>
-          <li>Applied CI/CD pipelines and Git version control to automate deployments</li>
+          <li>Administered and maintained ServiceNow platform instances across ITSM and ITOM modules for enterprise financial operations</li>
+          <li>Built and optimized Service Catalog items, workflows, and approval policies to streamline internal IT service delivery</li>
+          <li>Developed REST API integrations connecting ServiceNow to external enterprise platforms and financial data systems</li>
+          <li>Managed CMDB data integrity and CI relationships for high-volume financial infrastructure assets</li>
+          <li>Designed dashboards and Performance Analytics reports for senior IT stakeholder reporting</li>
+          <li>Applied CI/CD practices and Git version control to manage update sets and platform deployments</li>
         </ul>
       </div>
     </div>
@@ -329,12 +348,13 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
       <div class="exp-right">
         <div class="exp-title">ServiceNow Developer & Analyst</div>
         <ul class="exp-bullets">
-          <li>Designed CMDB architecture managing 10,000+ global IT assets — improving resource allocation by 15%</li>
-          <li>Automated 30+ manual workflows using Flow Designer & Integration Hub — 25% faster incident resolution</li>
-          <li>Deployed 15+ automated data pipelines, reducing manual data entry by 20% across ITSM modules</li>
-          <li>Built REST/SOAP integrations connecting ServiceNow to enterprise platforms for Fortune 500 clients</li>
-          <li>Designed ITSM, ITOM, Discovery, and Cloud Provisioning & Governance frameworks</li>
-          <li>Collaborated with US, UK, and global client stakeholders across time zones</li>
+          <li>Designed and maintained CMDB architecture managing 10,000+ global IT assets — improving resource allocation by 15%</li>
+          <li>Automated 30+ manual workflows using Flow Designer & Integration Hub — reducing incident resolution time by 25%</li>
+          <li>Built and deployed ITSM, ITOM, Discovery, and Cloud Provisioning & Governance frameworks for Fortune 500 clients</li>
+          <li>Developed Business Rules, Client Scripts, Script Includes, and UI Policies across multiple platform releases</li>
+          <li>Created REST/SOAP integrations connecting ServiceNow to third-party enterprise systems across US and UK clients</li>
+          <li>Collaborated with global stakeholders across US, UK, and APAC time zones on enterprise platform delivery</li>
+          <li>Configured Service Portal, Virtual Agent chatbots, and Now Assist AI features for end-user self-service</li>
         </ul>
         <div class="promo-badge">⬆ Promoted to Analyst within first year</div>
       </div>
@@ -348,54 +368,60 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
   <div class="section-eyebrow">Credentials</div>
   <h2 class="section-title">ServiceNow Certifications</h2>
   <div class="certs-grid">
-    <div class="cert-card"><div class="cert-badge">CSA</div><div class="cert-info"><div class="cert-name">Certified System Administrator</div><div class="cert-type">Core Certification</div></div></div>
-    <div class="cert-card"><div class="cert-badge">CAD</div><div class="cert-info"><div class="cert-name">Certified Application Developer</div><div class="cert-type">Core Certification</div></div></div>
-    <div class="cert-card"><div class="cert-badge">CIS</div><div class="cert-info"><div class="cert-name">CIS — ITSM</div><div class="cert-type">Implementation Specialist</div></div></div>
-    <div class="cert-card"><div class="cert-badge">CIS</div><div class="cert-info"><div class="cert-name">CIS — Discovery</div><div class="cert-type">Implementation Specialist</div></div></div>
-    <div class="cert-card"><div class="cert-badge">CIS</div><div class="cert-info"><div class="cert-name">CIS — Cloud Provisioning & Governance</div><div class="cert-type">Implementation Specialist</div></div></div>
+    <div class="cert-card"><div class="cert-badge">CSA</div><div class="cert-info"><div class="cert-name">Certified System Administrator</div><div class="cert-type">Core Certification · Associate Track</div></div></div>
+    <div class="cert-card"><div class="cert-badge">CAD</div><div class="cert-info"><div class="cert-name">Certified Application Developer</div><div class="cert-type">Core Certification · Developer Track</div></div></div>
+    <div class="cert-card"><div class="cert-badge">CIS</div><div class="cert-info"><div class="cert-name">CIS — ITSM</div><div class="cert-type">Implementation Specialist · Expert Track</div></div></div>
+    <div class="cert-card"><div class="cert-badge">CIS</div><div class="cert-info"><div class="cert-name">CIS — Discovery</div><div class="cert-type">Implementation Specialist · Expert Track</div></div></div>
+    <div class="cert-card"><div class="cert-badge">CIS</div><div class="cert-info"><div class="cert-name">CIS — Cloud Provisioning & Governance</div><div class="cert-type">Implementation Specialist · Expert Track</div></div></div>
     <div class="cert-card"><div class="cert-badge">DB</div><div class="cert-info"><div class="cert-name">CMDB Specialist</div><div class="cert-type">Specialist Certification</div></div></div>
     <div class="cert-card"><div class="cert-badge">μ</div><div class="cert-info"><div class="cert-name">Flow Designer · Integration Hub</div><div class="cert-type">Micro-Certifications</div></div></div>
     <div class="cert-card"><div class="cert-badge">μ</div><div class="cert-info"><div class="cert-name">Performance Analytics · Virtual Agent</div><div class="cert-type">Micro-Certifications</div></div></div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="projects-section">
-  <div class="section-eyebrow">What I've built</div>
-  <h2 class="section-title">Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <div class="project-thumb thumb-space">🌌</div>
-      <div class="project-body">
-        <div class="project-num">01 · Full-Stack</div>
-        <h3>Space Weather Web Application</h3>
-        <p>Full-stack web app with real-time NASA API integration, interactive news feeds, and an AI-powered space bot for educational engagement.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">REST API</span><span class="tech-tag">JavaScript</span>
-        </div>
-      </div>
+<!-- TRACKS -->
+<section id="tracks" class="tracks-section">
+  <div class="section-eyebrow">Role alignment</div>
+  <h2 class="section-title">Associate · Developer · Expert</h2>
+  <div class="tracks-grid">
+    <div class="track-card track-assoc">
+      <div class="track-level">Associate Track</div>
+      <div class="track-title">Administrator & Support</div>
+      <ul class="track-items">
+        <li>Instance configuration & user management</li>
+        <li>ITSM module setup & support</li>
+        <li>Service Catalog & Service Portal</li>
+        <li>Update sets & release management</li>
+        <li>SLA / OLA configuration</li>
+        <li>Reporting & dashboards</li>
+        <li>CSA certified</li>
+      </ul>
     </div>
-    <div class="project-card">
-      <div class="project-thumb thumb-block">⛓️</div>
-      <div class="project-body">
-        <div class="project-num">02 · Research</div>
-        <h3>Blockchain in Capital Markets</h3>
-        <p>Technical analysis comparing Ethereum vs Hyperledger resiliency with focus on data residency compliance and asset tokenization.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Blockchain</span><span class="tech-tag">Ethereum</span><span class="tech-tag">Hyperledger</span>
-        </div>
-      </div>
+    <div class="track-card track-dev">
+      <div class="track-level">Developer Track</div>
+      <div class="track-title">Platform Developer</div>
+      <ul class="track-items">
+        <li>Business Rules, Client Scripts, Script Includes</li>
+        <li>Flow Designer & Workflow automation</li>
+        <li>REST / SOAP API integrations</li>
+        <li>Transform Maps & Data Import</li>
+        <li>Custom application development</li>
+        <li>ACLs & security policies</li>
+        <li>CAD certified</li>
+      </ul>
     </div>
-    <div class="project-card">
-      <div class="project-thumb thumb-sec">🔐</div>
-      <div class="project-body">
-        <div class="project-num">03 · Security</div>
-        <h3>Website Fingerprinting & Tor Analysis</h3>
-        <p>Research on traffic metadata analysis and security vulnerabilities in Tor anonymity networks, exploring attack vectors and mitigations.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span><span class="tech-tag">Network Security</span><span class="tech-tag">Data Analysis</span>
-        </div>
-      </div>
+    <div class="track-card track-exp">
+      <div class="track-level">Expert Track</div>
+      <div class="track-title">Implementation Specialist</div>
+      <ul class="track-items">
+        <li>ITSM architecture & design</li>
+        <li>CMDB schema & CI relationships</li>
+        <li>Discovery & Service Mapping</li>
+        <li>ITOM & Cloud Provisioning (CPG)</li>
+        <li>Integration Hub & MID Server</li>
+        <li>Now Assist AI & Virtual Agent</li>
+        <li>3× CIS certified</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -406,11 +432,13 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
     <div class="contact-left">
       <div class="section-eyebrow">Let's talk</div>
       <h2>Open to new opportunities</h2>
-      <p>Actively looking for ServiceNow Developer, Architect, and Data Engineer roles in the USA. If you have an interesting opportunity or just want to connect — reach out!</p>
+      <p>Actively looking for ServiceNow Developer, Administrator, and Implementation Specialist roles in the USA. Remote, hybrid, or on-site — reach out if you have a great fit!</p>
       <div class="role-tags">
         <span class="role-tag">ServiceNow Developer</span>
-        <span class="role-tag">ServiceNow Architect</span>
-        <span class="role-tag">Data Engineer</span>
+        <span class="role-tag">ServiceNow Admin</span>
+        <span class="role-tag">Implementation Specialist</span>
+        <span class="role-tag">ITSM Analyst</span>
+        <span class="role-tag">Platform Architect</span>
       </div>
     </div>
     <div class="contact-links">
@@ -434,7 +462,7 @@ footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-si
   </div>
 </section>
 
-<footer>© 2025 Ashwini Dasanakoppa · Haverford, PA, USA</footer>
+<footer>© 2025 Ashwini Dasanakoppa · Haverford, PA, USA · ServiceNow CSA · CAD · CIS-ITSM · CIS-Discovery · CIS-CPG</footer>
 
 </body>
 </html>
